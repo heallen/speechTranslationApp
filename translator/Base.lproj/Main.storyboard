@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,35 +23,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ICl-i1-DZW">
-                                <rect key="frame" x="0.0" y="74" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICl-i1-DZW">
+                                <rect key="frame" x="0.0" y="104" width="375" height="220"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmg-7i-Gba">
-                                <rect key="frame" x="92" y="520" width="191" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Speak"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmg-7i-Gba">
+                                <rect key="frame" x="16" y="581" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.10677617273168945" green="0.9457707405090332" blue="0.67120682538339449" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="speakClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s1b-2M-N2K"/>
+                                    <action selector="recordClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zV-H3-Uu2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq3-VH-5q2">
-                                <rect key="frame" x="92" y="558" width="191" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your spoken and translated text will appear here!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kew-BR-rmc">
+                                <rect key="frame" x="16" y="344" width="343" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq3-VH-5q2">
+                                <rect key="frame" x="16" y="552" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kew-BR-rmc">
-                                <rect key="frame" x="67" y="342" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iol-4D-Sb6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.1067761727" green="0.94577074049999998" blue="0.67120682539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1067761727" green="0.94577074049999998" blue="0.67120682539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="EasyTranslate" id="QF3-cO-HP4"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y44-Jy-7nN">
+                                <rect key="frame" x="93" y="619" width="188" height="30"/>
+                                <color key="backgroundColor" red="0.1067761727" green="0.94577074049999998" blue="0.67120682539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Swap Languages">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="swapClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QCW-U4-wgW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Langauge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-ga-ZLa">
+                                <rect key="frame" x="16" y="75" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scc-4m-COk">
+                                <rect key="frame" x="209" y="75" width="150" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5u-59-VNl">
+                                <rect key="frame" x="209" y="581" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.1067761727" green="0.94577074049999998" blue="0.67120682539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Translate &amp; Speak">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="translateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ASB-Ei-5X9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="scc-4m-COk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="2iq-AT-3AL"/>
+                            <constraint firstItem="iol-4D-Sb6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="3H9-pz-xIf"/>
+                            <constraint firstAttribute="trailing" secondItem="ICl-i1-DZW" secondAttribute="trailing" id="3ny-Zc-Ohf"/>
+                            <constraint firstItem="Qmg-7i-Gba" firstAttribute="top" secondItem="rq3-VH-5q2" secondAttribute="bottom" constant="8" id="5eV-LH-6Vg"/>
+                            <constraint firstItem="ICl-i1-DZW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.33" id="6I5-bv-yIh"/>
+                            <constraint firstItem="scc-4m-COk" firstAttribute="width" secondItem="OQ9-ga-ZLa" secondAttribute="width" id="8Oj-JX-57V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="scc-4m-COk" secondAttribute="trailing" id="DF0-kR-T0j"/>
+                            <constraint firstItem="Y44-Jy-7nN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="De1-1u-lba"/>
+                            <constraint firstAttribute="trailing" secondItem="iol-4D-Sb6" secondAttribute="trailing" id="EKA-f3-TDT"/>
+                            <constraint firstItem="kew-BR-rmc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="GWb-OI-PXA"/>
+                            <constraint firstItem="d5u-59-VNl" firstAttribute="width" secondItem="Qmg-7i-Gba" secondAttribute="width" id="GoC-2P-rVX"/>
+                            <constraint firstItem="Qmg-7i-Gba" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="HaF-dG-Rdt"/>
+                            <constraint firstItem="rq3-VH-5q2" firstAttribute="top" secondItem="kew-BR-rmc" secondAttribute="bottom" constant="8" id="IYo-Y8-UEE"/>
+                            <constraint firstItem="Y44-Jy-7nN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="JuX-C6-sfN"/>
+                            <constraint firstItem="kew-BR-rmc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Pn1-gL-RTH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rq3-VH-5q2" secondAttribute="leading" id="TOV-lb-rYm"/>
+                            <constraint firstItem="OQ9-ga-ZLa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="Ueh-7C-1KU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d5u-59-VNl" secondAttribute="trailing" id="YRr-X4-ehv"/>
+                            <constraint firstItem="rq3-VH-5q2" firstAttribute="width" secondItem="Qmg-7i-Gba" secondAttribute="width" id="ZEC-qX-bp9"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Qmg-7i-Gba" secondAttribute="leading" id="bbq-qw-Ehn"/>
+                            <constraint firstItem="ICl-i1-DZW" firstAttribute="top" secondItem="scc-4m-COk" secondAttribute="bottom" constant="8" id="gbm-uE-PKp"/>
+                            <constraint firstItem="iol-4D-Sb6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iqo-Xa-bcC"/>
+                            <constraint firstItem="kew-BR-rmc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lPS-OM-K1E"/>
+                            <constraint firstItem="kew-BR-rmc" firstAttribute="top" secondItem="ICl-i1-DZW" secondAttribute="bottom" constant="20" id="oyC-1Y-q1V"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="OQ9-ga-ZLa" secondAttribute="leading" id="paq-7C-KBA"/>
+                            <constraint firstItem="Y44-Jy-7nN" firstAttribute="top" secondItem="d5u-59-VNl" secondAttribute="bottom" constant="8" id="r0b-eh-bCx"/>
+                            <constraint firstItem="d5u-59-VNl" firstAttribute="top" secondItem="kew-BR-rmc" secondAttribute="bottom" constant="37" id="sIM-9B-GT3"/>
+                            <constraint firstItem="OQ9-ga-ZLa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="udd-BG-eXH"/>
+                            <constraint firstItem="ICl-i1-DZW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yEv-jP-ZRS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="ICl-i1-DZW" id="KiQ-XH-AvH"/>
