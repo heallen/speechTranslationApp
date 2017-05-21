@@ -83,7 +83,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate, UIPickerView
     }
     
     func getAuthToken(){
-        let key = "6d25455a838541f9ba749fbc487cee1b"
+        let key = //microsoft api key here 
         let headers: HTTPHeaders = [
             "Ocp-Apim-Subscription-Key": key
         ]
