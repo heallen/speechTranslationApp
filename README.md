@@ -1,4 +1,4 @@
-# Easy Translate
+# EasyTranslate
 
 ## Description
 This an iOS app that is designed to enable conversation between two different languages using primarily speech-to-speech translation. 
